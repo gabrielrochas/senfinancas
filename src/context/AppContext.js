@@ -26,7 +26,7 @@ const AppReducer = (state, action) => {
 };
 
 // Initial state
-const initialState = JSON.parse(localStorage.getItem("localTransactions"));
+const initialState = JSON.parse(localStorage.getItem("localTransactions")) || [];
 
 // Create context
 export const AppContext = createContext();
