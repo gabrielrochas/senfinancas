@@ -3,7 +3,7 @@ import { AppContext } from "../context/AppContext";
 import { v4 as uuidv4 } from "uuid";
 
 export const GetDate = () => {
-  const date = new Date()
+  const date = new Date().toLocaleString("pt-BR")
   return date;
 };
 

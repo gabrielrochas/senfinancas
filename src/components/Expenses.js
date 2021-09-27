@@ -5,9 +5,11 @@ export default function Expenses() {
   const { transactions } = useContext(AppContext);
 
   let expenses = 0;
-  transactions.map((transaction) => {
-    return transaction.type === "Expenses" ? (expenses += transaction.value) : 0;
-  });
+  transactions.forEach((transaction) => {
+    if(transaction.type === "Expenses") {
+      expenses += transaction.value
+    }
+  })
 
   return (
     <div className={`alert alert-danger`}>
