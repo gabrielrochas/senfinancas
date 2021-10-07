@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import { BsPencilSquare, BsTrash } from "react-icons/bs";
 import { AppContext } from "../context/AppContext";
 
+export const currencyFormat = (value) => {
+  return value.toLocaleString("pt-BR", { style: "currency", currency:"BRL"})
+}
 export default function TransactionItem(props) {
   const { dispatch } = useContext(AppContext);
 
-  const currencyFormat = (value) => {
-    return value.toLocaleString("pt-BR", { style: "currency", currency:"BRL"})
-  }
 
   const handleDeleteTransaction = () => {
     dispatch({ type: "DELETE_TRANSACTION", payload: props.id });
