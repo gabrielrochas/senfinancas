@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context/AppContext";
+import { currencyFormat } from "./TransactionItem";
 
 export default function Incomes() {
   const { transactions } = useContext(AppContext);
@@ -16,7 +17,7 @@ export default function Incomes() {
 
   return (
     <div className="alert alert-primary">
-      <span>Incomes: R$ {incomes}</span>
+      <span>Incomes: {currencyFormat(incomes)}</span>
     </div>
   );
 }

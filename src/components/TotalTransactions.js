@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context/AppContext";
+import { currencyFormat } from "./TransactionItem";
 
 export default function TotalTransactions() {
   const { transactions } = useContext(AppContext);
@@ -15,7 +16,7 @@ export default function TotalTransactions() {
   const typeAlert = (incomes === expenses ? "alert-secondary" : incomes > expenses ? "alert-success" : "alert-danger")
   return (
     <div className={`alert ${typeAlert}`}>
-      <span>Balance: R$ {balance}</span>
+      <span>Balance: {currencyFormat(balance)}</span>
     </div>
   );
 }
